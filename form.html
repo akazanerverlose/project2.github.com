@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real Estate Listings.com</title>
+    <link rel="stylesheet" href="form.css" />
+    <link rel="icon" href="icon.jpg" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper" id="user">
+      <form action="">
+        <h1>Login</h1>
+        <div class="input-box">
+          <input type="text" id="email" placeholder="email" required />
+          <i class="bx bxs-user"></i>
+        </div>
+        <div class="input-box">
+          <input type="password" placeholder="password" required />
+          <i class="bx bxs-lock-alt"></i>
+        </div>
+        <div class="Remember-Forgot">
+          <label><input type="checkbox" /> Remember me </label>
+          <a href="#">Forgot password?</a>
+        </div>
+        <button type="submit" class="btn">
+          <a href="index.html">Submit</a>
+        </button>
+        <div class="register-link">
+          <p>Don't have an account? <a href="#">Register</a></p>
+        </div>
+      </form>
+    </div>
+    <script>
+      document
+        .getElementById("user")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent form submission
+          const emailInput = document.getElementById("email").value;
+
+          // Regular expression to validate email format
+          const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+          if (!emailPattern.test(emailInput)) {
+            alert("Invalid email address! Please enter a correct email.");
+          } else {
+            alert("Email is valid! Form submitted.");
+            // Add code here to handle form submission, e.g., send data to the server
+            // this.submit();
+          }
+        });
+    </script>
+  </body>
+</html>
